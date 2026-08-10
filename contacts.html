@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact - Zorome</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- GRAND CONTENEUR -->
+
+    <div class="portfolio-container">
+
+
+        <!-- =========================
+             COLONNE GAUCHE
+        ========================== -->
+
+        <aside class="profile-sidebar">
+
+            <!-- PROFIL -->
+
+           <div class="profile">
+
+    <div class="profile-header">
+
+        <img
+            src="image/squig-game.jpg"
+            alt="Photo de Zorome"
+        >
+
+        <div class="profile-name">
+
+            <h1>Zorome</h1>
+
+            <p>Développeur Web</p>
+
+        </div>
+
+        <button class="profile-toggle" id="profileToggle">
+            ▼
+        </button>
+
+    </div>
+<div class="profile-info" id="profileInfo">
+
+    <a href="mailto:zoromeben3@gmail.com">
+        📧 zoromeben3@gmail.com
+    </a>
+
+    <a href="tel:+22664050827">
+        📱 +226 64 05 08 27
+    </a>
+
+    <a href="#" target="_blank">
+        💻 GitHub
+    </a>
+
+    <a href="#" target="_blank">
+        🔗 LinkedIn
+    </a>
+
+    <a href="#" target="_blank">
+        💬 WhatsApp
+    </a>
+
+</div>
+
+</div>
+
+            <!-- CONTACTS -->
+
+            <div class="contacts">
+
+                <h2>Contacts</h2>
+
+                
+
+
+                <a href="#">
+
+                    <img
+                        src="image/svg/img11.svg"
+                        alt="GitHub"
+                    >
+
+                    GitHub
+
+                </a>
+
+
+                <a href="#">
+
+                    <img
+                        src="image/svg/img22.svg"
+                        alt="LinkedIn"
+                    >
+
+                    LinkedIn
+
+                </a>
+
+
+                <a href="#">
+
+                    <img
+                        src="image/svg/img33.svg"
+                        alt="Email"
+                    >
+
+                    Email
+
+                </a>
+
+
+                <a href="#">
+
+                    <img
+                        src="image/svg/img44.svg"
+                        alt="WhatsApp"
+                    >
+
+                    WhatsApp
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- =========================
+             COLONNE DROITE
+        ========================== -->
+
+        <div class="right-column">
+
+
+            <!-- =========================
+                 MENU
+            ========================== -->
+
+           <nav class="menu">
+
+
+<button class="active" data-page="index.html">
+    À propos
+</button>
+
+<button data-page="parcours.html">
+    Parcours
+</button>
+
+<button data-page="projets.html">
+    Projets
+</button>
+
+<button data-page="contacts.html">
+    Contact
+</button>
+
+
+</nav>
+
+
+
+            <!-- =========================
+                 CONTENU PRINCIPAL
+            ========================== -->
+
+            <main class="main-content">
+
+
+                <!-- =========================
+                     SECTION CONTACT
+                ========================== -->
+
+                <section class="contact-section">
+
+
+                    <!-- INTRODUCTION -->
+
+                    <div class="contact-intro">
+
+                        <h2>Contactez-moi</h2>
+
+                        <h3>
+                            Un projet ou une idée en tête ?
+                        </h3>
+
+                        <p>
+                            N'hésitez pas à me contacter pour discuter
+                            de votre projet, poser une question ou
+                            simplement échanger.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- CONTENU CONTACT -->
+
+                    <div class="contact-container">
+
+
+                        <!-- INFORMATIONS -->
+
+                        <div class="contact-info">
+
+                            <h3>
+                                Mes coordonnées
+                            </h3>
+
+
+                            <div class="contact-item">
+
+                                <img
+                                    src="image/svg/img33.svg"
+                                    alt="Email"
+                                >
+
+                                <div>
+
+                                    <h4>Email</h4>
+
+                                    <p>
+                                        zoromeben3@gmail.com
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="contact-item">
+
+                                <img
+                                    src="image/svg/img55.svg"
+                                    alt="Téléphone"
+                                >
+
+                                <div>
+
+                                    <h4>Téléphone</h4>
+
+                                    <p>
+                                        +226 64 05 08 27
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+                        <!-- FORMULAIRE -->
+
+                        <div class="contact-form">
+
+                            <h3>
+                                Envoyez-moi un message
+                            </h3>
+
+
+                            <form id="contactForm">
+
+
+                                <!-- NOM -->
+
+                                <div class="form-group">
+
+                                    <label for="name">
+                                        Nom
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        placeholder="Votre nom"
+                                    >
+                                    <p id="nameError" class="error"></p>
+
+                                </div>
+
+
+
+                                <!-- EMAIL -->
+
+                                <div class="form-group">
+
+                                    <label for="email">
+                                        Email
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        placeholder="Votre adresse email"
+                                    >
+                                    <p id="emailError" class="error"></p>
+
+                                </div>
+
+
+
+                                <!-- SUJET -->
+
+                                <div class="form-group">
+
+                                    <label for="subject">
+                                        Sujet
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="subject"
+                                        placeholder="Sujet de votre message"
+                                    >
+                                    <p id="subjectError" class="error"></p>
+
+                                </div>
+
+
+
+                                <!-- MESSAGE -->
+
+                                <div class="form-group">
+
+                                    <label for="message">
+                                        Message
+                                    </label>
+
+                                    <textarea
+                                        id="message"
+                                        rows="6"
+                                        placeholder="Écrivez votre message..."
+                                    ></textarea>
+                                    <p id="messageError" class="error"></p>
+
+                                </div>
+
+
+
+                                <!-- BOUTON -->
+
+                                <button
+                                    type="submit"
+                                    class="submit-button"
+                                >
+                                    Envoyer le message
+                                </button>
+                                <p id="result"></p>
+
+
+                            </form>
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+            </main>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

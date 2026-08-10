@@ -1,0 +1,1762 @@
+/* =========================
+   0. POLICES
+   Ajoute ceci dans le <head> de tes pages HTML pour charger la police :
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+========================= */
+
+:root {
+    --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, "Courier New", monospace;
+}
+
+
+/* =========================
+   1. RÉINITIALISATION
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   2. PROFIL
+========================= */
+
+.profile {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile img {
+    width: 140px;
+    height: 140px;
+
+    object-fit: cover;
+    border-radius: 50%;
+
+    margin-bottom: 15px;
+}
+
+.profile h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+
+    font-family: var(--font-mono);
+    letter-spacing: -0.5px;
+}
+
+.profile p {
+    font-size: 16px;
+}
+
+
+/* =========================
+   3. CONTACTS
+========================= */
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+
+    gap: 35px;
+
+    text-align: center;
+}
+
+.contacts h2 {
+    margin-bottom: 1px;
+}
+
+.contacts a {
+    text-decoration: none;
+    color: #F8FAFC;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    transition: 0.3s;
+}
+
+.contacts a img {
+    width: 20px;
+    height: 20px;
+}
+
+.contacts a:hover {
+    color: #60A5FA;
+}
+
+
+/* =========================
+   4. BODY
+========================= */
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #0B1120;
+
+    color: #F8FAFC;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================
+   5. GRAND CONTENEUR
+========================= */
+
+.portfolio-container {
+    width: 90%;
+    max-width: 1200px;
+
+    min-height: 700px;
+
+    background-color: #111827;
+
+    border: 1px solid #263247;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    display: grid;
+
+    grid-template-columns: 250px 1fr;
+
+    gap: 30px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================
+   6. BLOC PROFIL GAUCHE
+========================= */
+
+.profile-sidebar {
+    border: 1px solid #263247;
+
+    border-radius: 15px;
+
+    position: sticky;
+
+    top: 30px;
+
+    align-self: start;
+
+    padding: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    background-color: #172033;
+}
+
+
+/* =========================
+   7. COLONNE DROITE
+========================= */
+
+.right-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* =========================
+   8. MENU
+========================= */
+
+.menu {
+
+    border: 1px solid #263247;
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background-color: #111827;
+
+    /* CORRECTION : "position" manquait, du coup "top" et "z-index"
+       n'avaient aucun effet. Ajout de "sticky" pour que le menu reste
+       visible en haut au scroll, comme .profile-sidebar. */
+    
+
+    top: 30px;
+
+    z-index: 100;
+}
+
+/* =========================
+   9. CONTENU PRINCIPAL
+========================= */
+
+.main-content {
+    flex: 1;
+
+    border: 1px solid #263247;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    background-color: #111827;
+    
+
+}
+
+
+/* =========================
+   10. BOUTONS DU MENU
+========================= */
+
+.menu button {
+    
+    padding: 10px 20px;
+
+    border: none;
+
+    background: none;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-family: var(--font-mono);
+
+    color: #94A3B8;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+
+/* SURVOL */
+
+.menu button:hover {
+    background-color: #172033;
+
+    color: #60A5FA;
+}
+
+
+/* BOUTON ACTIF */
+
+.menu button.active {
+    background-color: #172033;
+
+    color: #2563EB;
+}
+
+
+/* ==================================================
+   PAGE À PROPOS
+================================================== */
+
+
+/* =========================
+   11. SECTION À PROPOS
+========================= */
+
+.about-section > h2 {
+    font-size: 14px;
+
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    color: #2563EB;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   SLOGAN
+========================= */
+
+.slogan {
+    max-width: 700px;
+
+    font-size: 32px;
+
+    line-height: 1.3;
+
+    margin-bottom: 25px;
+
+    color: #F8FAFC;
+}
+
+
+/* =========================
+   TEXTE DE PRÉSENTATION
+========================= */
+
+.apropo {
+    max-width: 700px;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+
+    color: #94A3B8;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   APPEL À L'ACTION
+========================= */
+
+.call-to-action {
+    display: block;
+
+    font-size: 16px;
+
+    color: #2563EB;
+
+    margin-top: 20px;
+}
+
+
+/* ==================================================
+   MES OFFRES
+================================================== */
+
+
+/* =========================
+   12. SECTION OFFRES
+========================= */
+
+.offers {
+    margin-top: 50px;
+}
+
+.offers h2 {
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   CONTENEUR DES CARTES
+========================= */
+
+.offers-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================
+   13. CARTE D'OFFRE
+========================= */
+
+.offer-card {
+    border: 1px solid #263247;
+
+    border-radius: 14px;
+
+    padding: 22px;
+
+    min-height: 180px;
+
+    background-color: #172033;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* TITRE */
+
+.offer-card h3 {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+
+    color: #F8FAFC;
+}
+
+
+/* DESCRIPTION */
+
+.offer-card p {
+    line-height: 1.5;
+
+    color: #94A3B8;
+
+    font-size: 14px;
+}
+
+
+/* ICÔNE */
+
+.offer-icon {
+    width: 50px;
+
+    height: 50px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   14. EFFET AU SURVOL
+========================= */
+
+.offer-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #2563EB;
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.20);
+}
+
+
+/* ==================================================
+   PAGE PARCOURS
+================================================== */
+
+
+/* =========================
+   15. SECTION PARCOURS
+========================= */
+
+.parcours-section > h2 {
+    font-size: 14px;
+
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+
+    color: #2563EB;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   GRAND TITRE
+========================= */
+
+.parcours-section > h3 {
+    font-size: 30px;
+
+    color: #F8FAFC;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+.parcours-intro {
+    max-width: 700px;
+
+    color: #94A3B8;
+
+    line-height: 1.7;
+
+    margin-bottom: 50px;
+}
+
+
+/* ==================================================
+   FORMATION
+================================================== */
+
+
+/* =========================
+   TITRE FORMATION
+========================= */
+
+.formation > h2 {
+    color: #F8FAFC;
+
+    font-size: 24px;
+
+    margin-bottom: 35px;
+}
+
+
+/* ==================================================
+   TIMELINE
+================================================== */
+
+
+/* CONTENEUR */
+
+.timeline {
+    position: relative;
+
+    padding-left: 40px;
+}
+
+
+/* LIGNE VERTICALE */
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 8px;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 2px;
+
+    background-color: #263247;
+}
+
+
+/* =========================
+   ÉLÉMENT DE LA TIMELINE
+========================= */
+
+.timeline-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 80px 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   DATE
+========================= */
+
+.timeline-date {
+    font-weight: 600;
+    font-family: var(--font-mono);
+    font-size: 14px;
+
+    color: #2563EB;
+
+    padding-top: 5px;
+}
+
+
+/* =========================
+   POINT DE LA TIMELINE
+========================= */
+
+.timeline-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: -40px;
+
+    top: 5px;
+
+    width: 12px;
+
+    height: 12px;
+
+    background-color: #2563EB;
+
+    border-radius: 50%;
+
+    border: 3px solid #111827;
+
+    box-shadow: 0 0 0 2px #2563EB;
+}
+
+
+/* =========================
+   CARTE DE FORMATION
+========================= */
+
+.timeline-content {
+    background-color: #172033;
+
+    border: 1px solid #263247;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* TITRE DE LA CARTE */
+
+.timeline-content h3 {
+    font-size: 18px;
+
+    margin-bottom: 10px;
+
+    color: #F8FAFC;
+}
+
+
+/* TEXTE DE LA CARTE */
+
+.timeline-content p {
+    color: #94A3B8;
+
+    line-height: 1.6;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   SURVOL DE LA CARTE
+========================= */
+
+.timeline-content:hover {
+    transform: translateX(5px);
+
+    border-color: #2563EB;
+
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+}
+/* ==================================================
+   EXPÉRIENCES & RÉALISATIONS
+================================================== */
+
+/* SECTION */
+.experiences{
+    margin-top: 60px;
+}
+/* TITRE */
+.experiences >h2{
+    font-size: 24px;
+
+    color: #F8FAFC;
+    margin-bottom: 15px;
+}
+/* INTRODUCTION */
+.experiences-intro{
+    max-width: 700px;
+    color: #94A3B8;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+/*CONTENEUR*/
+.experiences-container{
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+/*      CARTES     */
+.experience-card{
+    border: 1px solid #263247;
+
+    border-radius: 14px;
+    padding: 22px;
+    background-color: #172033;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+/*ICÖNE*/
+.experience-card img{
+    width: 45px;
+    height: 45px;
+    margin-bottom: 15px;
+}
+/*  TITRES  */
+
+.experience-card h3{
+    font-size: 18px;
+
+    color: #F8FAFC;
+
+    margin-bottom: 10px;
+}
+
+/* =========================
+   LIEN PROJET
+========================= */
+.project-link{
+    display: inline-block;
+    margin-top: 20px;
+    color: #60A5FA;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.project-link:hover {
+    color: #2563EB;
+
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   SURVOL DE LA CARTE
+========================= */
+
+.experience-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #2563EB;
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.18);
+}
+/* ==================================================
+   COMPÉTENCES
+================================================== */
+
+.skills {
+    margin-top: 60px;
+}
+
+
+/* TITRE */
+
+.skills > h2 {
+    font-size: 24px;
+
+    color: #F8FAFC;
+
+    margin-bottom: 15px;
+}
+
+
+/* INTRODUCTION */
+
+.skills-intro {
+    max-width: 700px;
+
+    color: #94A3B8;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* CONTENEUR */
+
+.skills-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* CARTE */
+
+.skill-card {
+    border: 1px solid #263247;
+
+    border-radius: 14px;
+
+    padding: 22px;
+
+    background-color: #172033;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* TITRE DE LA CARTE */
+
+.skill-card h3 {
+    font-size: 18px;
+
+    color: #F8FAFC;
+
+    margin-bottom: 18px;
+}
+
+
+/* LISTE DES COMPÉTENCES */
+
+.skill-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+/* BADGES */
+
+.skill-list span {
+    padding: 7px 12px;
+
+    background-color: rgba(37, 99, 235, 0.15);
+
+    color: #60A5FA;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-family: var(--font-mono);
+
+    font-weight: 500;
+}
+
+
+/* SURVOL */
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #2563EB;
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.18);
+}
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.section-title img {
+    width: 32px;
+    height: 32px;
+}
+
+.section-title h2 {
+    font-size: 24px;
+    color: #F8FAFC;
+    margin: 0;
+}
+
+/* NOTE : ".competences" ne contenait que width/height sans autre
+   contexte — ça ressemblait à du code oublié. Je l'ai laissé tel
+   quel ici, à toi de me dire si tu veux la supprimer ou la
+   compléter (ex: fusionner avec .section-title img). */
+.competences {
+    width: 32px;
+    height: 32px;
+}
+/* ==================================================
+   CERTIFICATIONS
+================================================== */
+
+.certifications {
+    margin-top: 60px;
+}
+
+
+/* TITRE
+   NOTE : ce bloc redéfinit exactement les mêmes règles que
+   ".section-title" plus haut — c'est redondant, tu peux
+   probablement supprimer ce bloc et garder seulement
+   ".section-title" + ".certifications .section-title img" si tu
+   as besoin d'une exception. Laissé inchangé pour ne rien casser. */
+
+.certifications .section-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 15px;
+}
+
+.certifications .section-title img {
+    width: 32px;
+
+    height: 32px;
+}
+
+.certifications .section-title h2 {
+    font-size: 24px;
+
+    color: #F8FAFC;
+
+    margin: 0;
+}
+
+
+/* INTRODUCTION */
+
+.certifications-intro {
+    max-width: 700px;
+
+    color: #94A3B8;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* CONTENEUR */
+
+.certifications-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* CARTE */
+
+.certification-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 22px;
+
+    background-color: #172033;
+
+    border: 1px solid #263247;
+
+    border-radius: 14px;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* ICÔNE */
+
+.certification-icon {
+    width: 45px;
+
+    height: 45px;
+
+    flex-shrink: 0;
+}
+
+
+/* CONTENU */
+
+.certification-content h3 {
+    font-size: 17px;
+
+    color: #F8FAFC;
+
+    margin-bottom: 8px;
+}
+
+
+/* ORGANISME */
+
+.certification-organism {
+    color: #94A3B8;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+
+/* ANNÉE */
+
+.certification-year {
+    display: block;
+
+    color: #60A5FA;
+
+    font-size: 13px;
+    font-family: var(--font-mono);
+
+    font-weight: 600;
+
+    margin-bottom: 12px;
+}
+
+
+/* LIEN */
+
+.certification-link {
+    color: #60A5FA;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+.certification-link:hover {
+    color: #2563EB;
+
+    transform: translateX(4px);
+}
+
+
+/* SURVOL */
+
+.certification-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #2563EB;
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.18);
+}
+/* =========================
+   PAGE PROJETS
+========================= */
+
+.projects-section > h2 {
+    color: #2563EB;
+    font-size: 14px;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+}
+
+.projects-section > h3 {
+    font-size: 30px;
+    color: #F8FAFC;
+    margin-bottom: 20px;
+}
+
+.projects-intro {
+    max-width: 700px;
+    color: #94A3B8;
+    line-height: 1.7;
+    margin-bottom: 50px;
+}
+
+
+/* =========================
+   CONTENEUR DES PROJETS
+========================= */
+
+.projects-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================
+   CARTE PROJET
+========================= */
+
+.project-card {
+    border: 1px solid #263247;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    background-color: #172033;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* =========================
+   IMAGE DU PROJET
+========================= */
+
+.project-image {
+    width: 100%;
+    height: 200px;
+
+    overflow: hidden;
+
+    background-color: #1E293B;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* =========================
+   CONTENU
+========================= */
+
+.project-content {
+    padding: 22px;
+}
+
+.project-content h3 {
+    font-size: 20px;
+
+    color: #F8FAFC;
+
+    margin-bottom: 12px;
+}
+
+.project-content p {
+    color: #94A3B8;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   TECHNOLOGIES
+========================= */
+
+.project-technologies {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+.project-technologies span {
+    padding: 6px 10px;
+
+    background-color: rgba(37, 99, 235, 0.15);
+
+    color: #60A5FA;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-family: var(--font-mono);
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   LIEN
+========================= */
+
+.project-link {
+    display: inline-block;
+
+    color: #60A5FA;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.project-link:hover {
+    color: #2563EB;
+
+    transform: translateX(4px);
+}
+
+
+/* =========================
+   SURVOL DE LA CARTE
+========================= */
+
+.project-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #2563EB;
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.20);
+}
+
+
+/* ZOOM DE L'IMAGE */
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+/* =========================
+   PAGE CONTACT
+========================= */
+
+.contact-section h2 {
+    color: #2563EB;
+    font-size: 14px;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+}
+
+.contact-intro h3 {
+    font-size: 30px;
+    color: #F8FAFC;
+    margin-bottom: 20px;
+}
+
+.contact-intro p {
+    max-width: 700px;
+    color: #94A3B8;
+    line-height: 1.7;
+    margin-bottom: 50px;
+}
+
+
+/* =========================
+   CONTENEUR CONTACT
+========================= */
+
+.contact-container {
+    display: grid;
+
+    grid-template-columns: 1fr 1.5fr;
+
+    gap: 40px;
+}
+
+
+/* =========================
+   INFORMATIONS CONTACT
+========================= */
+
+.contact-info {
+    background-color: #172033;
+
+    border: 1px solid #263247;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    height: fit-content;
+}
+
+.contact-info > h3 {
+    font-size: 20px;
+
+    color: #F8FAFC;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   ÉLÉMENT CONTACT
+========================= */
+
+.contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.contact-item img {
+    width: 35px;
+
+    height: 35px;
+}
+
+.contact-item h4 {
+    font-size: 15px;
+
+    color: #F8FAFC;
+
+    margin-bottom: 5px;
+}
+
+.contact-item p {
+    font-size: 14px;
+
+    color: #94A3B8;
+}
+
+
+/* =========================
+   FORMULAIRE
+========================= */
+
+.contact-form {
+    border: 1px solid #263247;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    background-color: #172033;
+}
+
+.contact-form > h3 {
+    font-size: 20px;
+
+    color: #F8FAFC;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   GROUPE DU FORMULAIRE
+========================= */
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.form-group label {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #F8FAFC;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   CHAMPS
+========================= */
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px 15px;
+
+    border: 1px solid #263247;
+
+    border-radius: 8px;
+
+    background-color: #0B1120;
+
+    color: #F8FAFC;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+/* =========================
+   FOCUS
+========================= */
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #2563EB;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.20);
+}
+
+
+/* =========================
+   TEXTAREA
+========================= */
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+/* =========================
+   BOUTON ENVOYER
+========================= */
+
+.submit-button {
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #2563EB;
+
+    color: #FFFFFF;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #1D4ED8;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(37, 99, 235, 0.30);
+}
+/*javascrip */
+.error {
+    color: #EF4444;
+    margin: 0;
+    font-size: 14px;
+}
+
+.ok {
+    color: #22C55E;
+    margin: 0;
+    font-size: 14px;
+}
+.profile-info {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+
+    transition:
+        max-height 0.4s ease,
+        opacity 0.3s ease,
+        margin-top 0.4s ease;
+}
+
+.profile-info.show {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 20px;
+}
+
+
+/* Par défaut : bouton caché sur ordinateur */
+
+.profile-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+/* =========================
+   COMPÉTENCES MOBILE
+========================= */
+
+.skills {
+    margin-top: 40px;
+}
+
+.skills-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.skill-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 18px;
+}
+/* =========================
+   CERTIFICATIONS MOBILE
+========================= */
+
+.certifications {
+    margin-top: 40px;
+}
+
+.certifications-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.certification-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 18px;
+}
+/* =========================
+   EXPÉRIENCES MOBILE
+========================= */
+
+.experiences {
+    margin-top: 40px;
+}
+
+.experiences-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.experience-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 18px;
+}
+
+@media (max-width: 768px) {
+
+    .contacts {
+        display: none;
+    }
+
+    .portfolio-container {
+        width: 95%;
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .profile-sidebar {
+        position: static;
+        width: auto;
+    }
+
+    .right-column {
+        width: 100%;
+    }
+
+    .menu {
+        position: sticky;
+        top: 0;
+        width: auto;
+    }
+
+
+    /* =========================
+       PROFIL DÉROULANT
+    ========================= */
+
+    .profile-header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .profile-header img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .profile-name {
+        flex: 1;
+    }
+
+    .profile-name h1 {
+        margin: 0;
+    }
+
+    .profile-name p {
+        margin: 5px 0 0;
+    }
+
+    .profile-toggle {
+        display: block;
+    }
+
+    .profile-toggle.open {
+        transform: rotate(180deg);
+    }
+    .profile-info {
+    border-top: 1px solid #263247;
+    padding-top: 15px;
+}
+
+.profile-info a {
+    display: block;
+
+    margin: 10px 0;
+
+    padding: 8px 0;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.profile-info a:hover {
+    transform: translateX(5px);
+}
+
+/* =========================
+   OFFRES SUR MOBILE
+========================= */
+
+.offers-container {
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+
+.offer-card {
+    width: 100%;
+    box-sizing: border-box;
+}
+/* =========================
+   CONTENU PRINCIPAL MOBILE
+========================= */
+
+.main-content {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.about-section,
+.contact-section {
+    width: 100%;
+    box-sizing: border-box;
+}
+/* =========================
+   PARCOURS - TIMELINE MOBILE
+========================= */
+
+.timeline-item {
+    grid-template-columns: 55px 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.timeline-date {
+    font-size: 13px;
+}
+
+.timeline-content {
+    padding: 15px;
+}
+
+.timeline-content h3 {
+    font-size: 16px;
+}
+
+.timeline-content p {
+    font-size: 14px;
+}
+/* =========================
+   PROJETS - MOBILE
+========================= */
+
+.projects-section {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.projects-section > h3 {
+    font-size: 24px;
+}
+
+.projects-intro {
+    margin-bottom: 30px;
+}
+
+.projects-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.project-card {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.project-image {
+    height: 180px;
+}
+
+.project-content {
+    padding: 18px;
+}
+
+.project-content h3 {
+    font-size: 18px;
+}
+
+.project-content p {
+    font-size: 14px;
+}
+}

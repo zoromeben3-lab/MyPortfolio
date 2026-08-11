@@ -1560,6 +1560,20 @@ body {
         position: sticky;
         top: 0;
         width: auto;
+        z-index: 200;
+
+        /* fond bien opaque + léger flou pour que le contenu qui
+           défile en dessous ne soit jamais visible à travers */
+        background-color: #111827;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+
+        /* on aplatit le haut pour que le menu touche visuellement
+           le bord de l'écran une fois collé */
+        border-radius: 0 0 15px 15px;
+        border-top: none;
+
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
     }
 
 

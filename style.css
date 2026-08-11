@@ -1521,61 +1521,6 @@ body {
     cursor: pointer;
     transition: transform 0.3s ease;
 }
-/* =========================
-   COMPÉTENCES MOBILE
-========================= */
-
-.skills {
-    margin-top: 40px;
-}
-
-.skills-container {
-    grid-template-columns: 1fr;
-    gap: 15px;
-}
-
-.skill-card {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 18px;
-}
-/* =========================
-   CERTIFICATIONS MOBILE
-========================= */
-
-.certifications {
-    margin-top: 40px;
-}
-
-.certifications-container {
-    grid-template-columns: 1fr;
-    gap: 15px;
-}
-
-.certification-card {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 18px;
-}
-/* =========================
-   EXPÉRIENCES MOBILE
-========================= */
-
-.experiences {
-    margin-top: 40px;
-}
-
-.experiences-container {
-    grid-template-columns: 1fr;
-    gap: 15px;
-}
-
-.experience-card {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 18px;
-}
-
 @media (max-width: 768px) {
         html,
     body {
@@ -1776,4 +1721,139 @@ body {
 .right-column{
     min-width: 0;
 }
+
+    /* =========================
+       COMPÉTENCES MOBILE
+    ========================= */
+
+    .skills {
+        margin-top: 40px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .skill-card {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 18px;
+    }
+
+    /* =========================
+       CERTIFICATIONS MOBILE
+    ========================= */
+
+    .certifications {
+        margin-top: 40px;
+    }
+
+    .certifications-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .certification-card {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 18px;
+    }
+
+    /* =========================
+       EXPÉRIENCES MOBILE
+    ========================= */
+
+    .experiences {
+        margin-top: 40px;
+    }
+
+    .experiences-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .experience-card {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 18px;
+    }
+
+    /* =========================
+       FORMULAIRE DE CONTACT MOBILE
+    ========================= */
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* =========================
+       MENU MOBILE (éviter le débordement)
+    ========================= */
+
+    .menu {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .menu button {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+}
+
+/* =========================
+   TRÈS PETITS ÉCRANS (téléphones étroits)
+========================= */
+
+@media (max-width: 480px) {
+
+    .portfolio-container {
+        width: 100%;
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .profile-sidebar,
+    .main-content {
+        padding: 18px;
+    }
+
+    .slogan {
+        font-size: 24px;
+    }
+
+    .parcours-section > h3,
+    .projects-section > h3,
+    .contact-intro h3 {
+        font-size: 22px;
+    }
+
+    .offer-card,
+    .skill-card,
+    .certification-card,
+    .experience-card {
+        padding: 15px;
+    }
+
+    .menu {
+        gap: 6px;
+    }
+
+    .menu button {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .project-image {
+        height: 160px;
+    }
 }

@@ -1557,10 +1557,12 @@ body {
     }
 
     .menu {
-        position: sticky;
+        position: fixed;
         top: 0;
-        width: auto;
-        z-index: 200;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
 
         /* fond bien opaque + léger flou pour que le contenu qui
            défile en dessous ne soit jamais visible à travers */
@@ -1568,12 +1570,21 @@ body {
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
 
-        /* on aplatit le haut pour que le menu touche visuellement
-           le bord de l'écran une fois collé */
-        border-radius: 0 0 15px 15px;
+        /* barre pleine largeur, collée en haut de l'écran */
+        margin: 0;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
         border-top: none;
 
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Comme le menu est maintenant "fixed", il sort du flux normal
+       de la page : on ajoute donc un espace en haut pour que le
+       contenu ne se retrouve pas caché en dessous du menu. */
+    .profile-sidebar {
+        margin-top: 66px;
     }
 
 

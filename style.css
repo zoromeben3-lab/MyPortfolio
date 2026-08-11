@@ -1577,7 +1577,20 @@ body {
 }
 
 @media (max-width: 768px) {
+        html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
 
+    .portfolio-container,
+    .profile-sidebar,
+    .right-column,
+    .main-content {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
     .contacts {
         display: none;
     }
@@ -1685,6 +1698,7 @@ body {
     width: 100%;
     box-sizing: border-box;
     padding: 20px;
+    min-width: 0;
 }
 
 .about-section,
@@ -1758,5 +1772,8 @@ body {
 
 .project-content p {
     font-size: 14px;
+}
+.right-column{
+    min-width: 0;
 }
 }

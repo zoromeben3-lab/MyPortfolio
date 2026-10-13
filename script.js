@@ -17,7 +17,8 @@ menuButtons.forEach(function(button) {
 
 
     // Vérifier quelle page est actuellement ouverte
-    const currentPage = window.location.pathname.split("/").pop();
+    // (si l'URL se termine par "/", on est sur la page d'accueil)
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
 
     // Vérifier si le bouton correspond à la page actuelle
@@ -162,7 +163,7 @@ function validateEmail() {
     }
 
 
-   clearError(emailError)
+   clearError(emailError);
 
     return true;
 
@@ -324,15 +325,26 @@ form.addEventListener("submit", function(event) {
 
 });
 }
+// ========================================
+// 19. PROFIL DÉROULANT (MOBILE)
+// ========================================
+
 const profileToggle = document.getElementById("profileToggle");
 const profileInfo = document.getElementById("profileInfo");
 
-profileToggle.addEventListener("click", function() {
+if (profileToggle && profileInfo) {
 
-    // Afficher / cacher les informations
-    profileInfo.classList.toggle("show");
+    profileToggle.addEventListener("click", function() {
 
-    // Faire tourner la flèche
-    profileToggle.classList.toggle("open");
+        // Afficher / cacher les informations
+        const isOpen = profileInfo.classList.toggle("show");
 
-});
+        // Faire tourner la flèche
+        profileToggle.classList.toggle("open", isOpen);
+
+        // Informer les lecteurs d'écran
+        profileToggle.setAttribute("aria-expanded", isOpen);
+
+    });
+
+}

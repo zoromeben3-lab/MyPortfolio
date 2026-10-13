@@ -6,7 +6,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portfolio - Zorome</title>
+    <title>Parcours - Zorome</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -40,7 +40,7 @@
 
         </div>
 
-        <button class="profile-toggle" id="profileToggle">
+        <button class="profile-toggle" id="profileToggle" aria-label="Afficher les contacts" aria-expanded="false">
             ▼
         </button>
 
@@ -48,27 +48,34 @@
 
 <div class="profile-info" id="profileInfo">
 
-    <a href="mailto:zoromeben3@gmail.com">
-        📧 zoromeben3@gmail.com
-    </a>
+                <a href="mailto:zoromeben3@gmail.com">
+                    <img src="image/svg/img33.svg" alt="">
+                    zoromeben3@gmail.com
+                </a>
 
-    <a href="tel:+22664050827">
-        📱 +226 64 05 08 27
-    </a>
+                <a href="tel:+22664050827">
+                    <img src="image/svg/img55.svg" alt="">
+                    +226 64 05 08 27
+                </a>
 
-    <a href="#" target="_blank">
-        💻 GitHub
-    </a>
+                <!-- TODO : remplacer # par ton lien GitHub -->
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <img src="image/svg/img11.svg" alt="">
+                    GitHub
+                </a>
 
-    <a href="#" target="_blank">
-        🔗 LinkedIn
-    </a>
+                <!-- TODO : remplacer # par ton lien LinkedIn -->
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <img src="image/svg/img22.svg" alt="">
+                    LinkedIn
+                </a>
 
-    <a href="#" target="_blank">
-        💬 WhatsApp
-    </a>
+                <a href="https://wa.me/22664050827" target="_blank" rel="noopener noreferrer">
+                    <img src="image/svg/img44.svg" alt="">
+                    WhatsApp
+                </a>
 
-</div>
+            </div>
 
 </div>
 
@@ -77,27 +84,28 @@
             <div class="contacts">
 
                 <h2>Contacts</h2>
-  
-                          
-    <a href="#">
-        <img src="image/svg/img11.svg" alt="GitHub">
-        GitHub
-    </a>
-    
-    <a href="#">
-        <img src="image/svg/img22.svg" alt="LinkedIn">
-        LinkedIn
-    </a>
 
-    <a href="#">
-        <img src="image/svg/img33.svg" alt="Email">
-        Email
-    </a>
+                <!-- TODO : remplacer # par ton lien GitHub -->
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <img src="image/svg/img11.svg" alt="">
+                    GitHub
+                </a>
 
-    <a href="#">
-        <img src="image/svg/img44.svg" alt="WhatsApp">
-        WhatsApp
-    </a>
+                <!-- TODO : remplacer # par ton lien LinkedIn -->
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <img src="image/svg/img22.svg" alt="">
+                    LinkedIn
+                </a>
+
+                <a href="mailto:zoromeben3@gmail.com">
+                    <img src="image/svg/img33.svg" alt="">
+                    Email
+                </a>
+
+                <a href="https://wa.me/22664050827" target="_blank" rel="noopener noreferrer">
+                    <img src="image/svg/img44.svg" alt="">
+                    WhatsApp
+                </a>
 
             </div>
 
@@ -116,24 +124,23 @@
             ========================== -->
 
             <nav class="menu">
+                <button data-page="index.html">
+                    À propos
+                </button>
 
+                <button class="active" data-page="parcours.html">
+                    Parcours
+                </button>
 
-<button class="active" data-page="index.html">
-    À propos
-</button>
+                <button data-page="projets.html">
+                    Projets
+                </button>
 
-<button data-page="parcours.html">
-    Parcours
-</button>
+                <button data-page="contacts.html">
+                    Contact
+                </button>
 
-<button data-page="projets.html">
-    Projets
-</button>
-
-<button data-page="contacts.html">
-    Contact
-</button>
-</nav>
+            </nav>
 
 
 
@@ -162,7 +169,7 @@
 
         <div class="formation">
 <div class="section-title">
-    <img src="image/svg/formation.svg" alt="Formation">
+    <img src="image/svg/formation.svg" alt="">
     <h2>Formation</h2>
 </div>
 
@@ -178,10 +185,10 @@
 
                     <div class="timeline-content">
 
-                        <h3>Baccalauréat Scientifiques</h3>
+                        <h3>Baccalauréat scientifique</h3>
 
                         <p>
-                            Obtention du Baccalauréat au Lycée  Communal de Tougan. 
+                            Obtention du Baccalauréat au Lycée Communal de Tougan.
                         </p>
 
                     </div>
@@ -253,8 +260,9 @@
 
    
     <div class="section-title">
-    <img src="image/svg/formation.svg" alt="Formation">
-     <h2>Expériences & Réalisations</h2>
+        <!-- SVG à ajouter : image/svg/experience.svg (masqué tant qu'il n'existe pas) -->
+        <img src="image/svg/experience.svg" alt="" onerror="this.style.display='none'">
+        <h2>Expériences &amp; Réalisations</h2>
 </div>
     <p class="experiences-intro">
         À travers mes projets, je mets en pratique mes compétences
@@ -271,7 +279,7 @@
 
             <img src="image/svg/foliza.png" alt="foliza">
 
-            <h3> Foliza</h3>
+            <h3>Foliza</h3>
 
             <p>
 Plateforme web conçue pour faciliter la mise en 
@@ -316,7 +324,11 @@ relation et proposer des services numériques adaptés aux utilisateurs.
 
 <section class="skills">
 
-    <h2>Compétences</h2>
+    <div class="section-title">
+        <!-- SVG à ajouter : image/svg/competences.svg (masqué tant qu'il n'existe pas) -->
+        <img src="image/svg/competences.svg" alt="" onerror="this.style.display='none'">
+        <h2>Compétences</h2>
+    </div>
 
     <p class="skills-intro">
         Les technologies et outils que j'utilise pour concevoir
@@ -331,7 +343,7 @@ relation et proposer des services numériques adaptés aux utilisateurs.
         <div class="skill-card">
             
             
-        <img class="competences" src="image/svg/frontend.svg" alt="frontend">
+        <img class="competences" src="image/svg/frontend.svg" alt="">
             <h3>Frontend</h3>
 
             <div class="skill-list">
@@ -347,7 +359,7 @@ relation et proposer des services numériques adaptés aux utilisateurs.
         <!-- BACKEND -->
 
         <div class="skill-card">
-            <img class="competences" src="image/svg/backend.svg" alt="backend">
+            <img class="competences" src="image/svg/backend.svg" alt="">
             <h3>Backend</h3>
 
             <div class="skill-list">
@@ -362,7 +374,7 @@ relation et proposer des services numériques adaptés aux utilisateurs.
         <!-- BASES DE DONNÉES -->
 
         <div class="skill-card">
-            <img class="competences" src="image/svg/database.svg" alt="database">
+            <img class="competences" src="image/svg/database.svg" alt="">
             <h3>Bases de données</h3>
 
             <div class="skill-list">
@@ -376,8 +388,8 @@ relation et proposer des services numériques adaptés aux utilisateurs.
         <!-- OUTILS -->
 
         <div class="skill-card">
-            <img class="competences" src="image/svg/outils.svg" alt="outils">
-            <h3> Outils</h3>
+            <img class="competences" src="image/svg/outils.svg" alt="">
+            <h3>Outils</h3>
 
             <div class="skill-list">
                 <span>Git</span>
@@ -398,7 +410,7 @@ relation et proposer des services numériques adaptés aux utilisateurs.
 
     <div class="section-title">
 
-        <img src="image/svg/certification.svg" alt="Certifications">
+        <img src="image/svg/certification.svg" alt="">
 
         <h2>Certifications</h2>
 
@@ -419,7 +431,7 @@ relation et proposer des services numériques adaptés aux utilisateurs.
 
             <img
                 src="image/svg/certification.svg"
-                alt="Certification"
+                alt=""
                 class="certification-icon"
             >
 
@@ -450,7 +462,7 @@ relation et proposer des services numériques adaptés aux utilisateurs.
 
             <img
                 src="image/svg/certification.svg"
-                alt="Certification"
+                alt=""
                 class="certification-icon"
             >
 

@@ -30,7 +30,7 @@
     margin-bottom: 40px;
 }
 
-.profile img {
+.profile-header img {
     width: 140px;
     height: 140px;
 
@@ -202,10 +202,8 @@ body {
 
     background-color: #111827;
 
-    /* CORRECTION : "position" manquait, du coup "top" et "z-index"
-       n'avaient aucun effet. Ajout de "sticky" pour que le menu reste
-       visible en haut au scroll, comme .profile-sidebar. */
-    
+    /* le menu reste visible en haut au scroll, comme .profile-sidebar */
+    position: sticky;
 
     top: 30px;
 
@@ -673,13 +671,6 @@ body {
 .experiences{
     margin-top: 60px;
 }
-/* TITRE */
-.experiences >h2{
-    font-size: 24px;
-
-    color: #F8FAFC;
-    margin-bottom: 15px;
-}
 /* INTRODUCTION */
 .experiences-intro{
     max-width: 700px;
@@ -716,6 +707,12 @@ body {
     width: 45px;
     height: 45px;
     margin-bottom: 15px;
+}
+/* TEXTE */
+.experience-card p{
+    color: #94A3B8;
+    font-size: 14px;
+    line-height: 1.6;
 }
 /*  TITRES  */
 
@@ -763,17 +760,6 @@ body {
 
 .skills {
     margin-top: 60px;
-}
-
-
-/* TITRE */
-
-.skills > h2 {
-    font-size: 24px;
-
-    color: #F8FAFC;
-
-    margin-bottom: 15px;
 }
 
 
@@ -886,13 +872,18 @@ body {
     margin: 0;
 }
 
-/* NOTE : ".competences" ne contenait que width/height sans autre
-   contexte — ça ressemblait à du code oublié. Je l'ai laissé tel
-   quel ici, à toi de me dire si tu veux la supprimer ou la
-   compléter (ex: fusionner avec .section-title img). */
+/* icône des cartes de compétences */
 .competences {
+    display: block;
     width: 32px;
     height: 32px;
+    margin-bottom: 12px;
+}
+
+/* titres de section suivis d'un paragraphe d'intro : espacement réduit */
+.experiences .section-title,
+.skills .section-title {
+    margin-bottom: 15px;
 }
 /* ==================================================
    CERTIFICATIONS
@@ -903,12 +894,7 @@ body {
 }
 
 
-/* TITRE
-   NOTE : ce bloc redéfinit exactement les mêmes règles que
-   ".section-title" plus haut — c'est redondant, tu peux
-   probablement supprimer ce bloc et garder seulement
-   ".section-title" + ".certifications .section-title img" si tu
-   as besoin d'une exception. Laissé inchangé pour ne rien casser. */
+/* TITRE (même base que .section-title, avec un espacement réduit) */
 
 .certifications .section-title {
     display: flex;
@@ -1035,6 +1021,8 @@ body {
 /* LIEN */
 
 .certification-link {
+    display: inline-block;
+
     color: #60A5FA;
 
     text-decoration: none;
@@ -1505,7 +1493,7 @@ body {
 }
 
 .profile-info.show {
-    max-height: 300px;
+    max-height: 400px;
     opacity: 1;
     margin-top: 20px;
 }
@@ -1604,6 +1592,7 @@ body {
         height: 100px;
         object-fit: cover;
         border-radius: 50%;
+        margin-bottom: 0;
     }
 
     .profile-name {
@@ -1631,7 +1620,9 @@ body {
 }
 
 .profile-info a {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
     margin: 10px 0;
 
@@ -1642,6 +1633,12 @@ body {
     text-decoration: none;
 
     transition: 0.3s ease;
+}
+
+.profile-info a img {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
 }
 
 .profile-info a:hover {

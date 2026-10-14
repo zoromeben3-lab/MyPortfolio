@@ -1867,14 +1867,19 @@ body {
         padding: 15px;
     }
 
-    .menu {
-        gap: 6px;
-    }
+ .menu {
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    gap: 4px;
+    padding: 12px;
+}
 
-    .menu button {
-        padding: 8px 10px;
-        font-size: 12px;
-    }
+.menu button {
+    flex: 1;
+    text-align: center;
+    padding: 8px 4px;
+    font-size: 13px;
+}
 
     .project-image {
         height: 160px;

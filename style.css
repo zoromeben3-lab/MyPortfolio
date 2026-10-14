@@ -202,8 +202,7 @@ body {
 
     background-color: #111827;
 
-    /* le menu reste visible en haut au scroll, comme .profile-sidebar */
-    position: sticky;
+    
 
     top: 30px;
 
@@ -1495,7 +1494,7 @@ body {
 .profile-info.show {
     max-height: 400px;
     opacity: 1;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 

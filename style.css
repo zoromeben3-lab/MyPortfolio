@@ -1616,6 +1616,7 @@ body {
     .profile-info {
     border-top: 1px solid #263247;
     padding-top: 15px;
+    align-items: center;
 }
 
 .profile-info a {
